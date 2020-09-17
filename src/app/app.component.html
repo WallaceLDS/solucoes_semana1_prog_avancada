@@ -1,2 +1,19 @@
-<app-fatec-info></app-fatec-info>
-<app-fatec-curso></app-fatec-curso>
+<div class="container">
+<div class="row">
+  <div class="col-12">
+    <app-fatec-info></app-fatec-info>
+  </div>
+</div>
+
+<div class="row">
+
+  <div class="col-4"  *ngFor="let n of curso">
+    <app-fatec-curso [nomecurso] = "n"></app-fatec-curso>
+  </div>
+</div>
+<div class="row">
+     <div class="col-4">
+      <app-cadastro-curso (cursoAdiciona) = "onAdicionaCurso($event)"></app-cadastro-curso>
+    </div>
+  </div>
+</div>

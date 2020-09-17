@@ -6,5 +6,14 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'exercicio01';
+  curso=[
+    {nome: "Analise e Desenvolvimento"},
+    {nome: "Gestão empresarial"},
+    {nome: "Eventos"},
+    {nome: "Gestão de RH"},
+   ];
+   onAdicionaCurso(nome){
+     this.curso=[nome, ...this.curso]
+   }
+
 }
