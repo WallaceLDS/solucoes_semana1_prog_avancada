@@ -1,19 +1,49 @@
 <div class="container">
-<div class="row">
-  <div class="col-12">
-    <app-fatec-info></app-fatec-info>
-  </div>
-</div>
-
-<div class="row">
-
-  <div class="col-4"  *ngFor="let n of curso">
-    <app-fatec-curso [nomecurso] = "n"></app-fatec-curso>
-  </div>
-</div>
-<div class="row">
-     <div class="col-4">
-      <app-cadastro-curso (cursoAdiciona) = "onAdicionaCurso($event)"></app-cadastro-curso>
+  <div [hidden]="exibirAluno">
+    <div class="continer">
+      <div class="row">
+        <div class="col-12">
+          <app-fatec-info></app-fatec-info>
+        </div>
+      </div>
+      <div class="row">
+        <div  class="col-4"  *ngFor="let n of cursos">
+          <app-fatec-curso   [nomecurso] = "n"></app-fatec-curso>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-4">
+          <app-cadastro-curso (cursoAdiciona) = "onAdicionaCurso($event)"></app-cadastro-curso>
+          <button appDiretivaBTN = "#bf00ff" class="btn btn-info" id="btncd" (click)="exibirPagina()" >Cadastrar Aluno</button>
+        </div>
+      </div>
     </div>
   </div>
+
+  <div [hidden]="!exibirAluno">
+    <div class="row">
+    <app-cadastro-aluno [c] ="cursos"></app-cadastro-aluno>a
+      <div class="col-4">
+        <button class="btn btn-info" (click)="exibirPagina()" >Cadastrar curso</button>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
 </div>
+
+
+
+
+
+
+
+
+
+
+
+
+

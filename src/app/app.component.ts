@@ -6,14 +6,21 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  curso=[
+  exibirCadastro: boolean = true;
+  exibirAluno: boolean = false;
+
+
+  cursos=[
     {nome: "Analise e Desenvolvimento"},
     {nome: "Gestão empresarial"},
     {nome: "Eventos"},
     {nome: "Gestão de RH"},
    ];
    onAdicionaCurso(nome){
-     this.curso=[nome, ...this.curso]
+     this.cursos=[nome, ...this.cursos]
    }
-
+   exibirPagina(){
+    this.exibirCadastro = !this.exibirCadastro;
+    this.exibirAluno = !this.exibirAluno;
+  }
 }

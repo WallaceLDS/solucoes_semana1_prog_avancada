@@ -8,6 +8,9 @@ import { Component, Input} from '@angular/core';
 export class FatecCursoComponent  {
 
   @Input() nomecurso;
+  Styleheader(){
+    return['headerStyle']
+  }
 
 
 }
